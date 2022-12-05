@@ -5,6 +5,10 @@
     justify-content: space-around;
 }
 
+.content-container.card-body{
+    height: 100%;
+}
+
 .time{
     font-size: 35px;
 }

@@ -1,0 +1,7 @@
+.tab-content{
+    height: 100%;
+}
+
+.tab-pane.tab.active{
+    height: 100%;
+}

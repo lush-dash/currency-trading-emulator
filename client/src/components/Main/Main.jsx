@@ -1,17 +1,14 @@
 import React from 'react';
 import {
-  Card, CardHeader,
+  Card,
 } from 'reactstrap';
-import Trading from '../Trading/Trading';
+import Tabbar from '../Tabbar/Tabbar';
 import './index.css';
 
 export default function Main() {
   return (
     <Card className="main-card">
-      <CardHeader>
-        Trading
-      </CardHeader>
-      <Trading />
+      <Tabbar />
     </Card>
   );
 }
