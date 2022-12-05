@@ -1,6 +1,10 @@
+import Main from './components/Main/Main';
+
 function App() {
   return (
-    <p>Hello</p>
+    <div className="container">
+      <Main />
+    </div>
   );
 }
 

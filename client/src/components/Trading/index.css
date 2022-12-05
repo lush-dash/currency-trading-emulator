@@ -1,0 +1,44 @@
+.content-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.content-container.card-body{
+    height: 100%;
+}
+
+.time{
+    font-size: 35px;
+}
+
+.prices-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.price{
+    font-size: 45px;
+    border: none;
+    background-color: transparent;
+}
+
+.price>p {
+margin: 0;
+text-align: center;
+font-weight: 500;
+}
+
+.price.green{
+    color: green;
+}
+
+.price.red{
+    color: red;
+}
+
+#select{
+    max-width: 50%;
+}

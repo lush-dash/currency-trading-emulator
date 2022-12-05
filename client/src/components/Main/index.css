@@ -1,0 +1,9 @@
+.main-card{
+    min-width: 60%;
+    min-height: 25em;
+}
+
+.card-header{
+    padding: 0;
+    border-bottom: none;
+}
