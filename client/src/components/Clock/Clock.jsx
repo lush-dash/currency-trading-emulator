@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import {
-  CardTitle,
+  CardTitle, Spinner,
 } from 'reactstrap';
+import './index.css';
 
 export default function Clock() {
-  const [clock, setClock] = useState();
+  const [clock, setClock] = useState(null);
 
   useEffect(() => {
     setInterval(() => {
@@ -15,7 +16,8 @@ export default function Clock() {
 
   return (
     <CardTitle className="time" tag="h5">
-      {clock}
+      { clock || (<Spinner />)}
     </CardTitle>
+
   );
 }
