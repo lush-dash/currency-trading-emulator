@@ -3,8 +3,10 @@ import {
   Table,
 } from 'reactstrap';
 import './index.css';
+import { useSelector } from 'react-redux';
 
 function Archive() {
+  const orders = useSelector((state) => state.orders);
   return (
     <Table>
       <thead>
@@ -27,23 +29,15 @@ function Archive() {
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <th scope="row">
-            SELL
-          </th>
-          <td>
-            1.5745
-          </td>
-          <td>
-            USD/GBP
-          </td>
-          <td>
-            100000000000000
-          </td>
-          <td>
-            2022.12.05 15:00:00
-          </td>
-        </tr>
+        {orders.map((el) => (
+          <tr key={el.timeStamp}>
+            <th className={el.type === 'SELL' ? 'red' : 'green'} scope="row">{el.type}</th>
+            <td>{el.price}</td>
+            <td>{el.currency}</td>
+            <td>{el.volume}</td>
+            <td>{el.timeStamp}</td>
+          </tr>
+        ))}
       </tbody>
     </Table>
   );
