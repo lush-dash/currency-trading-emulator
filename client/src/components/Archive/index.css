@@ -4,10 +4,10 @@ th, td{
 
 .top-row{
     border-bottom: solid 1px #ced4da;
-    text-align: center;
 }
 
 Table{
     margin-top: 2em;
     font-size: 10px;
+    text-align: center;
 }
