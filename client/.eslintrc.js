@@ -22,5 +22,6 @@ module.exports = {
     'react/jsx-filename-extension': 0,
     'react/prop-types': 0,
     'react/jsx-no-bind': 0,
+    'default-param-last': 0,
   },
 };

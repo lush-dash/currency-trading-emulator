@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { memo } from 'react';
 import {
   Table,
 } from 'reactstrap';
 import './index.css';
 
-export default function Archive() {
+function Archive() {
   return (
     <Table>
       <thead>
@@ -48,3 +48,5 @@ export default function Archive() {
     </Table>
   );
 }
+
+export default memo(Archive);
