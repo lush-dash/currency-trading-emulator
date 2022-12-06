@@ -1,41 +1,30 @@
-import React, { useState } from 'react';
+import React, { memo, useState } from 'react';
 import {
   CardBody, Input,
 } from 'reactstrap';
 import Clock from '../Clock/Clock';
-import ModalWindow from '../ModalWindow/ModalWindow';
+import Prices from '../Prices/Prices';
 import './index.css';
 
-export default function Trading() {
-  const [modalState, setModalState] = useState(false);
+function Trading() {
   const currencies = ['GBP/USD', 'EUR/GBP', 'EUR/USD'];
+  const [input, setInput] = useState('0');
 
-  function closeModal() {
-    setModalState(false);
-  }
   return (
-    <>
-      <CardBody className="content-container">
-        <Clock />
-        <Input
-          id="select"
-          name="select"
-          type="select"
-        >
-          {currencies.map((el) => (<option key={el}>{el}</option>))}
-        </Input>
-        <div className="prices-container">
-          <button type="button" className="price green" onClick={() => { setModalState(true); }}>
-            <p>BUY</p>
-            <p>1.5766</p>
-          </button>
-          <button type="button" className="price red" onClick={() => { setModalState(true); }}>
-            <p>SELL</p>
-            <p>1.5745</p>
-          </button>
-        </div>
-      </CardBody>
-      <ModalWindow modalState={modalState} closeModal={closeModal} />
-    </>
+    <CardBody className="content-container">
+      <Clock />
+      <Input
+        id="select"
+        name="select"
+        type="select"
+        value={input}
+        onChange={(e) => { setInput(e.target.value); }}
+      >
+        {currencies.map((el, i) => (<option value={i} key={el}>{el}</option>))}
+      </Input>
+      <Prices currencies={currencies} input={input} />
+    </CardBody>
   );
 }
+
+export default memo(Trading);
