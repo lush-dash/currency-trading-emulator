@@ -1,4 +1,4 @@
-# currency-trading-emulator
+# Сurrency Trading Emulator
 
 Тестовое задание - эмулятор терминала торговли валютой.
 
