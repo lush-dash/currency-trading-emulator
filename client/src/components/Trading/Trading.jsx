@@ -3,6 +3,7 @@ import {
   CardBody, Input,
 } from 'reactstrap';
 import Clock from '../Clock/Clock';
+import ModalWindow from '../ModalWindow/ModalWindow';
 import Prices from '../Prices/Prices';
 import './index.css';
 
@@ -11,19 +12,22 @@ function Trading() {
   const [input, setInput] = useState('0');
 
   return (
-    <CardBody className="content-container">
-      <Clock />
-      <Input
-        id="select"
-        name="select"
-        type="select"
-        value={input}
-        onChange={(e) => { setInput(e.target.value); }}
-      >
-        {currencies.map((el, i) => (<option value={i} key={el}>{el}</option>))}
-      </Input>
-      <Prices currencies={currencies} input={input} />
-    </CardBody>
+    <>
+      <CardBody className="content-container">
+        <Clock />
+        <Input
+          id="select"
+          name="select"
+          type="select"
+          value={input}
+          onChange={(e) => { setInput(e.target.value); }}
+        >
+          {currencies.map((el, i) => (<option value={i} key={el}>{el}</option>))}
+        </Input>
+        <Prices currencies={currencies} input={input} />
+      </CardBody>
+      <ModalWindow />
+    </>
   );
 }
 

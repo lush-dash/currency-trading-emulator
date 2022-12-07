@@ -30,12 +30,12 @@ function Archive() {
       </thead>
       <tbody>
         {orders.map((el) => (
-          <tr key={el.timeStamp}>
+          <tr key={el.timestamp}>
             <th className={el.type === 'SELL' ? 'red' : 'green'} scope="row">{el.type}</th>
             <td>{el.price}</td>
             <td>{el.currency}</td>
             <td>{el.volume}</td>
-            <td>{el.timeStamp}</td>
+            <td>{el.timestamp}</td>
           </tr>
         ))}
       </tbody>
